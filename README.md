@@ -12,7 +12,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
 
 ## Node / NPM / Laravel Mix Build CSS / Javascript
 
-Make sure to install your node modules to start in the [theme_basic_bedrock/themes/basic_bedrock/build](theme_basic_bedrock/themes/basic_bedrock/build/) directory:
+Make sure to install your node modules to start in the [basic_bedrock_build](basic_bedrock_build/) directory:
 
 ```
 npm install
@@ -20,7 +20,7 @@ npm install
 
 If you do not have npm, you'll need to install [Node Js](https://nodejs.org/en/).
 
-In [theme_basic_bedrock/themes/basic_bedrock/build](theme_basic_bedrock/themes/basic_bedrock/build/) you will see the Laravel Mix setup.  You should be able to use the following documentation from [laravel-mix/docs/cli.md](https://github.com/laravel-mix/laravel-mix/blob/master/docs/cli.md).
+In [basic_bedrock_build](basic_bedrock_build/) you will see the Laravel Mix setup.  You should be able to use the following documentation from [laravel-mix/docs/cli.md](https://github.com/laravel-mix/laravel-mix/blob/master/docs/cli.md).
 
 ---
 
