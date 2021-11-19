@@ -1,3 +1,4 @@
-theme_basic_bedrock/themes/basic_bedrock/build/node_modules
-theme_basic_bedrock/themes/basic_bedrock/build/package-lock.json
 .idea
+basic_bedrock_build/package-lock.json
+basic_bedrock_build/node_modules
+packages/theme_basic_bedrock/themes/basic_bedrock/build/node_modules
