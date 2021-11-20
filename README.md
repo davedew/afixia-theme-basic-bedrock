@@ -10,6 +10,36 @@ This package will automatically install the thumbnails for Bootstrap5 so there i
 
 JS and CSS are setup as assets in the package controller and required in the page_theme.php.
 
+---
+
+## Personalize for your project
+
+- Change the icon.png (97px x 97px) in the packages/theme_basic_bedrock directory.
+- Change the thumbnail..png (360px x 270px) in the packages/theme_basic_bedrock/themes/basic_bedrock directory.
+- To change the name and descriptions, for my example below I want my theme to be named "**Rock Solid**":
+  -  **Directory names**
+     - packages/theme_rock_solid
+     - pa*ckages/theme_rock_solid/theme/rock_solid
+   - **Namespaces**
+     - **File:** packages/theme_rock_solid/controller.php
+       - namespace Concrete\Package\ThemeRockSolid;
+     - **File:** packages/theme_rock_solid/theme/rock_solid/page_theme.php
+       - namespace Concrete\Package\ThemeRockSolid\Theme\RockSolid;
+   - **Names and Descriptions**
+     - **File:** packages/theme_rock_solid/controller.php
+       - protected $pkgHandle = 'theme_rock_solid';
+       - protected $themePath = 'themes/rock_solid/';
+       - protected $themeName = 'Rock Solid';
+       - protected $themeHandle = 'rock_solid';
+       - public function getPackageDescription: 
+       - public function on_start(): Names of assets
+     - **File:** packages/theme_rock_solid/theme/rock_solid/page_theme.php
+       - public function getThemeName()
+       - public function getThemeDescription()
+       - $this->requireAsset('basic-bedrock-app');
+     - **File:** packages/theme_rock_solid/theme/rock_solid/description.txt
+  
+---
 ## Node / NPM / Laravel Mix Build CSS / Javascript
 
 Make sure to install your node modules to start in the [basic_bedrock_build](basic_bedrock_build/) directory:
