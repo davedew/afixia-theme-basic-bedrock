@@ -32,7 +32,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
 - To change the name and descriptions, for my example below I want my theme to be named "**Rock Solid**":
   -  **Directory names**
      - packages/theme_rock_solid
-     - pa*ckages/theme_rock_solid/theme/rock_solid
+     - packages/theme_rock_solid/theme/rock_solid
    - **Namespaces**
      - **File:** packages/theme_rock_solid/controller.php
        - namespace Concrete\Package\ThemeRockSolid;
