@@ -1,5 +1,18 @@
 # Basic Bedrock Theme Package for Concrete CMS v9
 
+- [Basic Bedrock Theme Package for Concrete CMS v9](#basic-bedrock-theme-package-for-concrete-cms-v9)
+  - [Concrete CMS Bedrock Documentation](#concrete-cms-bedrock-documentation)
+  - [Description](#description)
+  - [Personalize for your project](#personalize-for-your-project)
+  - [Node / NPM / Laravel Mix Build CSS / JavaScript](#node--npm--laravel-mix-build-css--javascript)
+  - [Laravel Mix CLI:](#laravel-mix-cli)
+      - [Watch Assets for Changes](#watch-assets-for-changes)
+      - [Polling](#polling)
+      - [Hot Module Replacement](#hot-module-replacement)
+    - [Compiling for Production](#compiling-for-production)
+      - [Customize the Mix Configuration Path](#customize-the-mix-configuration-path)
+    - [Pass Options to Webpack-CLI](#pass-options-to-webpack-cli)
+
 ## [Concrete CMS Bedrock Documentation](https://documentation.concretecms.org/developers/appendix/concrete-cms-bedrock-foundation-concrete-and-concrete-themes)
 
 ## Description
@@ -15,7 +28,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
 ## Personalize for your project
 
 - Change the icon.png (97px x 97px) in the packages/theme_basic_bedrock directory.
-- Change the thumbnail..png (360px x 270px) in the packages/theme_basic_bedrock/themes/basic_bedrock directory.
+- Change the thumbnail.png (360px x 270px) in the packages/theme_basic_bedrock/themes/basic_bedrock directory.
 - To change the name and descriptions, for my example below I want my theme to be named "**Rock Solid**":
   -  **Directory names**
      - packages/theme_rock_solid
@@ -40,7 +53,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
      - **File:** packages/theme_rock_solid/theme/rock_solid/description.txt
   
 ---
-## Node / NPM / Laravel Mix Build CSS / Javascript
+## Node / NPM / Laravel Mix Build CSS / JavaScript
 
 Make sure to install your node modules to start in the [basic_bedrock_build](basic_bedrock_build/) directory:
 
