@@ -3,7 +3,7 @@
 namespace Concrete\Package\ThemeBasicBedrock\Theme\BasicBedrock;
 
 use Concrete\Core\Feature\Features;
-use Concrete\Core\Page\Theme\BedrockThemeTrait;
+//use Concrete\Core\Page\Theme\BedrockThemeTrait;
 use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
 use Concrete\Core\Page\Theme\Theme;
 
@@ -28,6 +28,7 @@ class PageTheme extends Theme implements ThemeProviderInterface
         //Find all assets that Concrete5 provides here: /concrete/config/app.php
 
         $this->requireAsset('basic-bedrock-app');
+        // The following assets are loaded in the BedrockThemeTrait but do not include our basic-bedrock-app so we do not use the Trait
         $this->requireAsset('font-awesome');
         $this->requireAsset('jquery');
         $this->requireAsset('vue');
@@ -158,6 +159,7 @@ class PageTheme extends Theme implements ThemeProviderInterface
 //            Features::SEARCH,
 //            Features::TESTIMONIALS,
 //            Features::TAXONOMY,
+//            Features::CALENDAR,
         ];
     }
 
