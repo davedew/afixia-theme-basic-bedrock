@@ -1,4 +1,5 @@
 <?php
+
 namespace Concrete\Package\ThemeBasicBedrock\Theme\BasicBedrock;
 
 use Concrete\Core\Feature\Features;
@@ -21,26 +22,28 @@ class PageTheme extends Theme implements ThemeProviderInterface
 
     protected $pThemeGridFrameworkHandle = 'bootstrap5';
 
-     public function registerAssets() {
-         //Include Concrete5 Assests in the project instead of separately adding them in your theme so you aren't loading double
- 	    //Find all assets that Concrete5 provides here: /concrete/config/app.php
+    public function registerAssets()
+    {
+        //Include Concrete5 Assests in the project instead of separately adding them in your theme so you aren't loading double
+        //Find all assets that Concrete5 provides here: /concrete/config/app.php
 
- 	    //Top
- //	    $this->requireAsset('javascript', 'font-awesome');
-// 	    $this->requireAsset('javascript', 'jquery');
+        $this->requireAsset('basic-bedrock-app');
+        $this->requireAsset('font-awesome');
+        $this->requireAsset('jquery');
+        $this->requireAsset('vue');
+        $this->requireAsset('bootstrap');
+        $this->requireAsset('moment');
+        // 	    $this->requireAsset('javascript', 'picturefill');
 
- 	    //Bottom
-// 	    $this->requireAsset('javascript', 'picturefill');
- 	    $this->requireAsset('basic-bedrock-app');
-
-         //Tells Concrete5 that the theme should override and provide these files so it doesn't load double
+        //Tells Concrete5 that the theme should override and provide these files so it doesn't load double
 // 	    $this->providesAsset('css', 'font-awesome');
 // 	    $this->providesAsset('css', 'blocks/form');
 // 	    $this->providesAsset('css', 'core/frontend/*');
-     }
+    }
 
     //Tell the WYSIWYG Editor what styles / classes it should contain
-    public function getThemeEditorClasses() {
+    public function getThemeEditorClasses()
+    {
         return [
             //Span Level Styles
             // ['title' => t('Text Styles ======='), 'menuClass' => '', 'spanClass' => ''],
@@ -126,11 +129,11 @@ class PageTheme extends Theme implements ThemeProviderInterface
             ['title' => t('Dark Button'), 'element' => ['a'], 'attributes' => ['class' => 'btn btn-dark']],
             ['title' => t('Link Button'), 'element' => ['a'], 'attributes' => ['class' => 'btn btn-link']],
             ['title' => t('Remove Link Underline'), 'element' => ['a'], 'attributes' => ['class' => 'text-decoration-none']],
-            ['title' => t('Heading 1 Look'), 'element' => ['p','li','td'], 'attributes' => ['class' => 'h1']],
-            ['title' => t('Heading 2 Look'), 'element' => ['p','li','td'], 'attributes' => ['class' => 'h2']],
-            ['title' => t('Heading 3 Look'), 'element' => ['p','li','td'], 'attributes' => ['class' => 'h3']],
-            ['title' => t('Heading 4 Look'), 'element' => ['p','li','td'], 'attributes' => ['class' => 'h4']],
-            ['title' => t('Heading 5 Look'), 'element' => ['p','li','td'], 'attributes' => ['class' => 'h5']],
+            ['title' => t('Heading 1 Look'), 'element' => ['p', 'li', 'td'], 'attributes' => ['class' => 'h1']],
+            ['title' => t('Heading 2 Look'), 'element' => ['p', 'li', 'td'], 'attributes' => ['class' => 'h2']],
+            ['title' => t('Heading 3 Look'), 'element' => ['p', 'li', 'td'], 'attributes' => ['class' => 'h3']],
+            ['title' => t('Heading 4 Look'), 'element' => ['p', 'li', 'td'], 'attributes' => ['class' => 'h4']],
+            ['title' => t('Heading 5 Look'), 'element' => ['p', 'li', 'td'], 'attributes' => ['class' => 'h5']],
             ['title' => t('Blockquote'), 'element' => ['blockquote'], 'attributes' => ['class' => 'blockquote']],
             ['title' => t('Unstyled'), 'element' => ['ul'], 'attributes' => ['class' => 'list-unstyled']],
             ['title' => t('Inline'), 'element' => ['ul'], 'attributes' => ['class' => 'list-inline']],
@@ -173,15 +176,15 @@ class PageTheme extends Theme implements ThemeProviderInterface
     }
 
     //Automatically load these templates for these blocks
-	// public function getThemeDefaultBlockTemplates()
-	// {
-	// 	return [
-	// 		'autonav' => 'smart_menu.php',
-	// 		//'form' => 'f_forms.php',
-	// 		//'search' => 'f_search.php',
-	// 		//'youtube' => 'f_flex_video.php'
+    // public function getThemeDefaultBlockTemplates()
+    // {
+    // 	return [
+    // 		'autonav' => 'smart_menu.php',
+    // 		//'form' => 'f_forms.php',
+    // 		//'search' => 'f_search.php',
+    // 		//'youtube' => 'f_flex_video.php'
     //     ];
-	// }
+    // }
 
     //Any block defined by key will have the array of classes available in the advanced dropdown of the Custom Design toolbar
     // public function getThemeBlockClasses()
@@ -214,72 +217,72 @@ class PageTheme extends Theme implements ThemeProviderInterface
     // }
 
     //Custom Layouts available in the Layout Dropdown
-	public function getThemeAreaLayoutPresets()
-	{
-		$presets = [
-			[
-				'handle' => 'left_sidebar',
-				'name' => 'Left Sidebar',
-				'container' => '<div class="row"></div>',
-				'columns' => [
-					'<div class="col-md-4"></div>',
-					'<div class="col-md-8"></div>',
-				],
-			],
-			[
-				'handle' => 'right_sidebar',
-				'name' => 'Right Sidebar',
-				'container' => '<div class="row"></div>',
-				'columns' => [
-					'<div class="col-md-8"></div>',
-					'<div class="col-md-4"></div>',
-				],
-			],
-			[
-				'handle' => 'split',
-				'name' => '2 Columns 50/50',
-				'container' => '<div class="row"></div>',
-				'columns' => [
-					'<div class="col-md-6"></div>',
-					'<div class="col-md-6"></div>',
-				],
-			],
-			[
-				'handle' => 'three_columns',
-				'name' => '3 Columns',
-				'container' => '<div class="row"></div>',
-				'columns' => [
-					'<div class="col-md-4"></div>',
-					'<div class="col-md-4"></div>',
-					'<div class="col-md-4"></div>',
-				],
-			],
-			[
-				'handle' => 'four_columns',
-				'name' => '4 Columns',
-				'container' => '<div class="row"></div>',
-				'columns' => [
-					'<div class="col-md-3"></div>',
-					'<div class="col-md-3"></div>',
-					'<div class="col-md-3"></div>',
-					'<div class="col-md-3"></div>',
-				],
-			],
-			[
-				'handle' => 'six_columns',
-				'name' => '6 Columns',
-				'container' => '<div class="row"></div>',
-				'columns' => [
-					'<div class="col-md-2"></div>',
-					'<div class="col-md-2"></div>',
-					'<div class="col-md-2"></div>',
-					'<div class="col-md-2"></div>',
-					'<div class="col-md-2"></div>',
-					'<div class="col-md-2"></div>',
-				],
-			],
-		];
+    public function getThemeAreaLayoutPresets()
+    {
+        $presets = [
+            [
+                'handle' => 'left_sidebar',
+                'name' => 'Left Sidebar',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-4"></div>',
+                    '<div class="col-md-8"></div>',
+                ],
+            ],
+            [
+                'handle' => 'right_sidebar',
+                'name' => 'Right Sidebar',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-8"></div>',
+                    '<div class="col-md-4"></div>',
+                ],
+            ],
+            [
+                'handle' => 'split',
+                'name' => '2 Columns 50/50',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-6"></div>',
+                    '<div class="col-md-6"></div>',
+                ],
+            ],
+            [
+                'handle' => 'three_columns',
+                'name' => '3 Columns',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-4"></div>',
+                    '<div class="col-md-4"></div>',
+                    '<div class="col-md-4"></div>',
+                ],
+            ],
+            [
+                'handle' => 'four_columns',
+                'name' => '4 Columns',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-3"></div>',
+                    '<div class="col-md-3"></div>',
+                    '<div class="col-md-3"></div>',
+                    '<div class="col-md-3"></div>',
+                ],
+            ],
+            [
+                'handle' => 'six_columns',
+                'name' => '6 Columns',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                ],
+            ],
+        ];
 
-		return $presets;
-	}
+        return $presets;
+    }
 }
