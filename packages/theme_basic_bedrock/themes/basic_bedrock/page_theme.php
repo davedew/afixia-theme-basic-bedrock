@@ -2,7 +2,7 @@
 namespace Concrete\Package\ThemeBasicBedrock\Theme\BasicBedrock;
 
 use Concrete\Core\Feature\Features;
-//use Concrete\Core\Page\Theme\BedrockThemeTrait;
+use Concrete\Core\Page\Theme\BedrockThemeTrait;
 use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
 use Concrete\Core\Page\Theme\Theme;
 
