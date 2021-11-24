@@ -3,6 +3,7 @@
 - [Basic Bedrock Theme Package for Concrete CMS v9](#basic-bedrock-theme-package-for-concrete-cms-v9)
   - [Concrete CMS Bedrock Documentation](#concrete-cms-bedrock-documentation)
   - [Description](#description)
+  - [Installation](#installation)
   - [Personalize for your project](#personalize-for-your-project)
   - [Node / NPM / Laravel Mix Build CSS / JavaScript](#node--npm--laravel-mix-build-css--javascript)
   - [Laravel Mix CLI:](#laravel-mix-cli)
@@ -22,6 +23,15 @@ Using documentation from link above, I wanted to have a package ready to use for
 This package will automatically install the thumbnails for Bootstrap5 so there is no manaul setup of these needed in the Dashboard.
 
 JS and CSS are setup as assets in the package controller and required in the page_theme.php.
+
+---
+
+## Installation
+
+1. git clone https://github.com/davedew/afixia-theme-basic-bedrock.git where ever you want to temporarily download these files
+2. Move the **basic_bedrock_build** folder to the root / public folder of your Concrete CMS site.  It should be on the same level as your application, concrete, and packages folder.
+3. Move the **theme_basic_bedrock** within the packages folder to your Concrete CMS packages folder.
+4. Done, you should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
 
 ---
 
