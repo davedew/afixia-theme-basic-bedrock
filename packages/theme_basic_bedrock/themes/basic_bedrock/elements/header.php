@@ -27,13 +27,11 @@ $view->inc('elements/header_top.php');
 <div class="nav-container container">
     <div class="row">
         <div class="col-md-12">
-            <nav role="navigation">
-                <?php
-                $a = new GlobalArea('Navigation');
-                $a->setBlockLimit(1);
-                $a->display($c);
-                ?>
-            </nav>
+            <?php
+            $a = new GlobalArea('Navigation');
+            $a->setBlockLimit(1);
+            $a->display($c);
+            ?>
         </div>
     </div>
 </div>

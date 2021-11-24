@@ -5,6 +5,7 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Personalize for your project](#personalize-for-your-project)
+  - [Use / Editing JS and CSS](#use--editing-js-and-css)
   - [Node / NPM / Laravel Mix Build CSS / JavaScript](#node--npm--laravel-mix-build-css--javascript)
   - [Laravel Mix CLI:](#laravel-mix-cli)
       - [Watch Assets for Changes](#watch-assets-for-changes)
@@ -61,8 +62,18 @@ JS and CSS are setup as assets in the package controller and required in the pag
        - public function getThemeDescription()
        - $this->requireAsset('basic-bedrock-app');
      - **File:** packages/theme_rock_solid/theme/rock_solid/description.txt
+     - **File:** basic_bedrock_build/webpack.mix.js
+       - mix.js('src/js/app.js', 'js').setPublicPath('../packages/theme_rock_solid/themes/rock_solid/');
+       - mix.sass('src/scss/app.scss', 'css').setPublicPath('../packages/theme_rock_solid/themes/rock_solid/');
   
 ---
+
+## Use / Editing JS and CSS
+
+When making changes to the JavaScript or CSS, make your changes in the basic_bedrock_build/src folder then rebuild the js and css files in the package with **npx mix** or **npx mix --production** for minified versions. 
+
+---
+
 ## Node / NPM / Laravel Mix Build CSS / JavaScript
 
 Make sure to install your node modules to start in the [basic_bedrock_build](basic_bedrock_build/) directory:
@@ -74,6 +85,20 @@ npm install
 If you do not have npm, you'll need to install [Node Js](https://nodejs.org/en/).
 
 In [basic_bedrock_build](basic_bedrock_build/) you will see the Laravel Mix setup.  You should be able to use the following documentation from [laravel-mix/docs/cli.md](https://github.com/laravel-mix/laravel-mix/blob/master/docs/cli.md).
+
+**Note:** The package.json was created from my environment.  You might want to start over from your own.  You can do so with the following:
+
+Remove the **package.json**, **package-lock.json** (if exists), and the **node_modules** (if exists) folder and start over with the following:
+
+I’m referencing Laravel Mix’s docs here: [https://github.com/laravel-mix/laravel-mix/blob/master/docs/installation.md](https://github.com/laravel-mix/laravel-mix/blob/master/docs/installation.md)
+
+In the **basic_bedrock_build** folder do the following:
+
+1. npm init -y
+2. npm install laravel-mix --save-dev
+3. npm install @concretecms/bedrock
+4. Leave the webpack.mix.js and all other files alone, then run 
+5. npx mix
 
 ---
 
