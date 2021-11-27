@@ -29,10 +29,23 @@ JS and CSS are setup as assets in the package controller and required in the pag
 
 ## Installation
 
-1. git clone https://github.com/davedew/afixia-theme-basic-bedrock.git where ever you want to temporarily download these files
-2. Move the **basic_bedrock_build** folder to the root / public folder of your Concrete CMS site.  It should be on the same level as your application, concrete, and packages folder.
-3. Move the **theme_basic_bedrock** within the packages folder to your Concrete CMS packages folder.
-4. Done, you should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
+1. **Automatic Install with Shell Script**
+   
+   If using a Unix platform such as Linux or Mac OS, use your terminal and navigate to the public folder for Concrete CMS.  This folder contains the following: **application, concrete, packages, updates, index.php**.  Then run the following commands:  
+    ```shell
+    git clone https://github.com/davedew/afixia-theme-basic-bedrock.git
+    
+    cd afixia-theme-basic-bedrock
+    
+    ./install.sh
+    ```
+    Everything should be moved to their correct places and the repository directory should be removed now.
+    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
+2. **Manual Install:**
+   1. git clone https://github.com/davedew/afixia-theme-basic-bedrock.git where ever you want to temporarily download these files
+   2. Move the **basic_bedrock_build** folder to the root / public folder of your Concrete CMS site.  It should be on the same level as your application, concrete, and packages folder.
+   3. Move the **theme_basic_bedrock** within the packages folder to your Concrete CMS packages folder.
+   4. Done, you should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
 
 ---
 
