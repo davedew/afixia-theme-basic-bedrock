@@ -169,11 +169,11 @@ class PageTheme extends Theme implements ThemeProviderInterface
     public function getThemeResponsiveImageMap()
     {
         return [
-            'xs' => '0',
-            'sm' => '576px',
-            'md' => '768px',
-            'lg' => '992px',
             'xl' => '1200px',
+            'lg' => '992px',
+            'md' => '768px',
+            'sm' => '576px',
+            'xs' => '0',
         ];
     }
 
@@ -199,16 +199,6 @@ class PageTheme extends Theme implements ThemeProviderInterface
     // }
 
     // Any Area with the Key name will have the array of classes available in the advanced dropdown of the Custom Design toolbar
-    // public function getThemeAreaClasses()
-    // {
-    //     return [
-    //         'Main' => [
-    //             'mycustomclass'
-    //         ]
-    //     ];
-    // }
-
-    //Any Area with the Key name will have the array of classes available in the advanced dropdown of the Custom Design toolbar
     // public function getThemeAreaClasses()
     // {
     //     return [
