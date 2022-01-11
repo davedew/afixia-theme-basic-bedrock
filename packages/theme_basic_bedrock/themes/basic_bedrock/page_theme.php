@@ -27,13 +27,15 @@ class PageTheme extends Theme implements ThemeProviderInterface
         //Include Concrete5 Assests in the project instead of separately adding them in your theme so you aren't loading double
         //Find all assets that Concrete5 provides here: /concrete/config/app.php
 
-        $this->requireAsset('basic-bedrock-app');
         // The following assets are loaded in the BedrockThemeTrait but do not include our basic-bedrock-app so we do not use the Trait
         $this->requireAsset('font-awesome');
         $this->requireAsset('jquery');
         $this->requireAsset('vue');
         $this->requireAsset('bootstrap');
         $this->requireAsset('moment');
+
+        // Added Custom JS
+        $this->requireAsset('basic-bedrock-app');
         // 	    $this->requireAsset('javascript', 'picturefill');
 
         //Tells Concrete5 that the theme should override and provide these files so it doesn't load double

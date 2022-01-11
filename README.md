@@ -7,6 +7,7 @@
   - [Personalize for your project](#personalize-for-your-project)
   - [Use / Editing JS and CSS](#use--editing-js-and-css)
   - [Node / NPM / Laravel Mix Build CSS / JavaScript](#node--npm--laravel-mix-build-css--javascript)
+  - [Setup npx mix watch:](#setup-npx-mix-watch)
   - [Laravel Mix CLI:](#laravel-mix-cli)
       - [Watch Assets for Changes](#watch-assets-for-changes)
       - [Polling](#polling)
@@ -139,7 +140,7 @@ In [basic_bedrock_build](basic_bedrock_build/) you will see the Laravel Mix setu
 
 Remove the **package.json**, **package-lock.json** (if exists), and the **node_modules** (if exists) folder and start over with the following:
 
-Iâ€™m referencing Laravel Mixâ€™s docs here: [https://github.com/laravel-mix/laravel-mix/blob/master/docs/installation.md](https://github.com/laravel-mix/laravel-mix/blob/master/docs/installation.md)
+I'm referencing Laravel Mix's docs here: [https://github.com/laravel-mix/laravel-mix/blob/master/docs/installation.md](https://github.com/laravel-mix/laravel-mix/blob/master/docs/installation.md)
 
 In the **basic_bedrock_build** folder do the following:
 
@@ -148,6 +149,19 @@ In the **basic_bedrock_build** folder do the following:
 3. npm install @concretecms/bedrock
 4. Leave the webpack.mix.js and all other files alone, then run 
 5. npx mix
+
+---
+
+## Setup npx mix watch:
+
+If you want to develop fast with [Browser Sync](https://laravel-mix.com/docs/5.0/browsersync) you'll need to update the webpack.mix.js file.  You'll find that I have added the following in there:
+
+```javascript
+mix.browserSync({
+    proxy: 'c591.test' // You need to change this to your local dev URL for npm run watch or npx mix watch
+});
+```
+Make sure you change the proxy url to your local development url.
 
 ---
 
