@@ -1,14 +1,14 @@
-// Import Options:
+// Import the frontend foundation for themes.
+// NOTE: For now.. if you use this the dropdown selector from blocks to stacks/clipboard, etc is broken.
+// import 'concretecms-bedrock/assets/bedrock/js/frontend';
 
 // FRONT END
 // import 'concretecms-bedrock/assets/account/js/frontend'
-// import 'concretecms-bedrock/assets/bedrock/js/frontend'
 // import 'concretecms-bedrock/assets/boards/js/frontend'
 // import 'concretecms-bedrock/assets/calendar/js/frontend'
 // import 'concretecms-bedrock/assets/conversations/js/frontend'
 // import 'concretecms-bedrock/assets/desktop/js/frontend'
 // import 'concretecms-bedrock/assets/documents/js/frontend'
-// import 'concretecms-bedrock/assets/express/js/frontend'
 // import 'concretecms-bedrock/assets/express/js/frontend'
 // import 'concretecms-bedrock/assets/imagery/js/frontend'
 // import 'concretecms-bedrock/assets/maps/js/frontend'
