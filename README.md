@@ -7,14 +7,12 @@
   - [Personalize for your project](#personalize-for-your-project)
   - [Use / Editing JS and CSS](#use--editing-js-and-css)
   - [Node / NPM / Laravel Mix Build CSS / JavaScript](#node--npm--laravel-mix-build-css--javascript)
-  - [Setup npx mix watch:](#setup-npx-mix-watch)
-  - [Laravel Mix CLI:](#laravel-mix-cli)
+  - [Setup npm run watch:](#setup-npm-run-watch)
+  - [CLI Commands:](#cli-commands)
       - [Watch Assets for Changes](#watch-assets-for-changes)
       - [Polling](#polling)
       - [Hot Module Replacement](#hot-module-replacement)
     - [Compiling for Production](#compiling-for-production)
-      - [Customize the Mix Configuration Path](#customize-the-mix-configuration-path)
-    - [Pass Options to Webpack-CLI](#pass-options-to-webpack-cli)
 
 ## [Concrete CMS Bedrock Documentation](https://documentation.concretecms.org/developers/appendix/concrete-cms-bedrock-foundation-concrete-and-concrete-themes)
 
@@ -41,7 +39,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
     ./install.sh
     ```
     Everything should be moved to their correct places and the repository directory should be removed now.
-    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
+    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npm run prod**.
 2. **Powershell Installation**
    
    If using a Windows, open Powershell and navigate to the public folder for Concrete CMS.  This folder contains the following: **application, concrete, packages, updates, index.php**.  Then run the following commands:  
@@ -59,7 +57,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
     Remove-Item -LiteralPath "afixia-theme-basic-bedrock" -Force -Recurse
     ```
     Everything should be moved to their correct places and the repository directory should be removed now.
-    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
+    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npm run prod**.
 3. **Command Prompt (CMD) Installation**
    
    If using a Windows, open Command Prompt (CMD) and navigate to the public folder for Concrete CMS.  This folder contains the following: **application, concrete, packages, updates, index.php**.  Then run the following commands:  
@@ -77,12 +75,12 @@ JS and CSS are setup as assets in the package controller and required in the pag
     @RD /S /Q "afixia-theme-basic-bedrock"
     ```
     Everything should be moved to their correct places and the repository directory should be removed now.
-    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
+    You should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npm run prod**.
 4. **Manual Install**
    1. git clone https://github.com/davedew/afixia-theme-basic-bedrock.git where ever you want to temporarily download these files
    2. Move the **basic_bedrock_build** folder to the root / public folder of your Concrete CMS site.  It should be on the same level as your application, concrete, and packages folder.
    3. Move the **theme_basic_bedrock** within the packages folder to your Concrete CMS packages folder.
-   4. Done, you should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npx mix**.
+   4. Done, you should be able to install the package / theme and go to your **basic_bedrock_build** folder and run **npm install** then **npm run prod**.
 
 ---
 
@@ -120,7 +118,7 @@ JS and CSS are setup as assets in the package controller and required in the pag
 
 ## Use / Editing JS and CSS
 
-When making changes to the JavaScript or CSS, make your changes in the basic_bedrock_build/src folder then rebuild the js and css files in the package with **npx mix** or **npx mix --production** for minified versions. 
+When making changes to the JavaScript or CSS, make your changes in the basic_bedrock_build/src folder then rebuild the js and css files in the package with **npm run dev** or **npm run prod** for minified versions. 
 
 ---
 
@@ -148,29 +146,29 @@ In the **basic_bedrock_build** folder do the following:
 2. npm install laravel-mix --save-dev
 3. npm install @concretecms/bedrock
 4. Leave the webpack.mix.js and all other files alone, then run 
-5. npx mix
+5. npx run prod
 
 ---
 
-## Setup npx mix watch:
+## Setup npm run watch:
 
 If you want to develop fast with [Browser Sync](https://laravel-mix.com/docs/5.0/browsersync) you'll need to update the webpack.mix.js file.  You'll find that I have added the following in there:
 
 ```javascript
 mix.browserSync({
-    proxy: 'c591.test' // You need to change this to your local dev URL for npm run watch or npx mix watch
+    proxy: 'c591.test' // You need to change this to your local dev URL for npm run watch or npm run watch
 });
 ```
 Make sure you change the proxy url to your local development url.
 
 ---
 
-## Laravel Mix CLI:
+## CLI Commands:
 
-To build assets for development, reach for the `npx mix` command. Mix will then read your `webpack.mix.js` configuration file, and compile your assets.
+To build assets for development, reach for the `npm run dev` command. Mix will then read your `webpack.mix.js` configuration file, and compile your assets.
 
 ```
-npx mix
+npm run dev
 ```
 
 #### Watch Assets for Changes
@@ -178,7 +176,7 @@ npx mix
 Particularly for larger projects, compilation can take a bit of time. For this reason, it's highly recommended that you instead leverage webpack's ability to watch your filesystem for changes. The `npx mix watch` command will handle this for you. Now, each time you update a file, Mix will automatically recompile the file and rebuild your bundle. 
 
 ```
-npx mix watch
+npm run watch
 ```
 
 #### Polling
@@ -186,7 +184,7 @@ npx mix watch
 In certain situations, webpack may not automatically detect changes. An example of this is when you're on an NFS volume inside virtualbox. If this is a problem, pass the `--watch-options-poll` option directly to webpack-cli to turn on manual polling. 
  
  ```
- npx mix watch -- --watch-options-poll=1000
+npm run watch -- --watch-options-poll=1000
 ```
 
 Of course, you can add this to a build script within your `package.json` file.
@@ -196,7 +194,7 @@ Of course, you can add this to a build script within your `package.json` file.
 Hot module replacement is a webpack featured that gives supporting modules the ability to "live update" in certain situations. A live-update is when your application refreshes without requiring a page reload. In fact, this is what powers Vue's live updates when developing. To turn this feature on, include the `--hot` flag. 
 
 ```
-npx mix watch --hot
+npm run hot
 ```
 
 ### Compiling for Production
@@ -204,21 +202,5 @@ npx mix watch --hot
 When it comes time to build your assets for a production environment, Mix will set the appropriate webpack options, minify your source code, and optionally version your assets based on your Mix configuration file (`webpack.mix.js`). To build assets for production, include the `--production` flag - or the alias `-p` - to the Mix CLI. Mix will take care of the rest!
 
 ```
-npx mix --production
-```
-
-#### Customize the Mix Configuration Path
-
-You may customise the location of your `webpack.mix.js` file by using the `--mix-config` option. For example, if you wish to load your `webpack.mix.js` file from a nested `build` directory, here's how:
- 
- ```
- npx mix --mix-config=build/webpack.mix.js --production
-```
-
-### Pass Options to Webpack-CLI
-
-If you end any `mix` call with two dashes (`--`), anything after it will be passed through to webpack-cli. For example, you can pass environment variables using webpack-cli's `--env` option: 
-
-```
-npx mix -- --env foo=bar
+npm run prod
 ```
