@@ -3,16 +3,18 @@
 namespace Concrete\Package\ThemeBasicBedrock\Theme\BasicBedrock;
 
 use Concrete\Core\Feature\Features;
-// use Concrete\Core\Page\Theme\BedrockThemeTrait;
+use Concrete\Core\Page\Theme\BedrockThemeTrait;
+use Concrete\Core\Page\Theme\Color\Color;
 use Concrete\Core\Page\Theme\Color\ColorCollection;
-use Concrete\Core\Page\Theme\Color\ColorCollectionFactory;
 use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
 use Concrete\Core\Page\Theme\Theme;
 
 class PageTheme extends Theme implements ThemeProviderInterface
 {
 
-    // use BedrockThemeTrait;
+    use BedrockThemeTrait {
+        getColorCollection as getBedrockColorCollection;
+    }
 
     public function getThemeName()
     {
@@ -149,19 +151,18 @@ class PageTheme extends Theme implements ThemeProviderInterface
 
     public function getThemeSupportedFeatures()
     {
-        // Check the FEATURES.md file for how these line up with blocks and functionalities.
-        // You only include what features you are importing in the app.js and app.scss files.
+        // Add only what you customize here, otherwise bedrock defaults will apply
         return [
             Features::ACCORDIONS,
-            Features::ACCOUNT,
+//            Features::ACCOUNT,
             Features::BASICS,
-            Features::BOARDS,
+//            Features::BOARDS,
 //            Features::CALENDAR,
 //            Features::CONVERSATIONS,
-            Features::DESKTOP,
+//            Features::DESKTOP,
             Features::DOCUMENTS,
-//            Features::EXPRESS,
-            Features::FAQ,
+            Features::EXPRESS,
+//            Features::FAQ,
             Features::FILES,
 //            Features::FORMS,
             Features::IMAGERY,
@@ -172,7 +173,7 @@ class PageTheme extends Theme implements ThemeProviderInterface
 //            Features::PACKAGES,
 //            Features::PAGES,
 //            Features::POLLS,
-            Features::PROFILE,
+//            Features::PROFILE,
             Features::SEARCH,
             Features::SOCIAL,
 //            Features::STACKS,
@@ -299,14 +300,11 @@ class PageTheme extends Theme implements ThemeProviderInterface
         return $presets;
     }
 
-    public function getColorCollection(): ?ColorCollection
-    {
-        $factory = new ColorCollectionFactory();
-        return $factory->createFromArray([
-            'primary' => t('Primary'),
-            'secondary' => t('Secondary'),
-            'light' => t('Light'),
-            'dark' => t('Dark'),
-        ]);
-    }
+    // Add a custom color
+//    public function getColorCollection(): ?ColorCollection
+//    {
+//        $collection = $this->getBedrockColorCollection();
+//        $collection->add(new Color('fun', t('Fun!')));
+//        return $collection;
+//    }
 }
