@@ -1,32 +1,30 @@
 // Import base stylesheets
-@import "~concretecms-bedrock/assets/bedrock/scss/frontend";
+@import "~@concretecms/bedrock/assets/bedrock/scss/frontend";
 
-// FRONT END
-div.ccm-page {
-  @import "~concretecms-bedrock/assets/account/scss/frontend";
-  @import "~concretecms-bedrock/assets/basics/scss/frontend";
-   @import "~concretecms-bedrock/assets/boards/scss/frontend";
-  // @import "~concretecms-bedrock/assets/calendar/scss/frontend";
-  // @import "~concretecms-bedrock/assets/conversations/scss/frontend";
-   @import "~concretecms-bedrock/assets/desktop/scss/frontend";
-   @import "~concretecms-bedrock/assets/documents/scss/frontend";
-  // @import "~concretecms-bedrock/assets/express/scss/frontend";
-   @import "~concretecms-bedrock/assets/faq/scss/frontend";
-   @import "~concretecms-bedrock/assets/imagery/scss/frontend";
-   @import "~concretecms-bedrock/assets/maps/scss/frontend";
-  // @import "~concretecms-bedrock/assets/multilingual/scss/frontend";
-   @import "~concretecms-bedrock/assets/navigation/scss/frontend";
-   @import "~concretecms-bedrock/assets/polls/scss/frontend";
-   @import "~concretecms-bedrock/assets/profile/scss/frontend";
-   @import "~concretecms-bedrock/assets/search/scss/frontend";
-   @import "~concretecms-bedrock/assets/social/scss/frontend";
-   @import "~concretecms-bedrock/assets/taxonomy/scss/frontend";
-   @import "~concretecms-bedrock/assets/testimonials/scss/frontend";
-   @import "~concretecms-bedrock/assets/video/scss/frontend";
+// FRONT END - Follow these and make files in their corresponding folders to add customizations.
+// Check the FEATURES.md file for how these line up with blocks and functionalities.
 
- // OTHER
- // @import "~concretecms-bedrock/assets/ckeditor/scss/concrete";
+// @import "features/account";
+@import "features/basics";
+// @import "features/boards";
+// @import "features/calendar";
+// @import "features/conversations";
+// @import "features/desktop";
+@import "features/documents";
+@import "features/express";
+@import "features/faq";
+@import "features/imagery";
+@import "features/maps";
+// @import "features/multilingual";
+@import "features/navigation";
+// @import "features/polls";
+// @import "features/profile";
+@import "features/search";
+@import "features/social";
+@import "features/taxonomy";
+// @import "features/testimonials";
+@import "features/video";
 
- // Example of how to import an individual component and customize it
- //@import "features/calendar/calendar";
-}
+// div.ccm-page {
+
+// }

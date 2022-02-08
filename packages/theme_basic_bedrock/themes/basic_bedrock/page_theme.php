@@ -3,12 +3,16 @@
 namespace Concrete\Package\ThemeBasicBedrock\Theme\BasicBedrock;
 
 use Concrete\Core\Feature\Features;
-//use Concrete\Core\Page\Theme\BedrockThemeTrait;
+// use Concrete\Core\Page\Theme\BedrockThemeTrait;
+use Concrete\Core\Page\Theme\Color\ColorCollection;
+use Concrete\Core\Page\Theme\Color\ColorCollectionFactory;
 use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
 use Concrete\Core\Page\Theme\Theme;
 
 class PageTheme extends Theme implements ThemeProviderInterface
 {
+
+    // use BedrockThemeTrait;
 
     public function getThemeName()
     {
@@ -145,7 +149,8 @@ class PageTheme extends Theme implements ThemeProviderInterface
 
     public function getThemeSupportedFeatures()
     {
-        // Add only what you customize here, otherwise bedrock defaults will apply
+        // Check the FEATURES.md file for how these line up with blocks and functionalities.
+        // You only include what features you are importing in the app.js and app.scss files.
         return [
             Features::ACCORDIONS,
             Features::ACCOUNT,
@@ -292,5 +297,16 @@ class PageTheme extends Theme implements ThemeProviderInterface
         ];
 
         return $presets;
+    }
+
+    public function getColorCollection(): ?ColorCollection
+    {
+        $factory = new ColorCollectionFactory();
+        return $factory->createFromArray([
+            'primary' => t('Primary'),
+            'secondary' => t('Secondary'),
+            'light' => t('Light'),
+            'dark' => t('Dark'),
+        ]);
     }
 }
