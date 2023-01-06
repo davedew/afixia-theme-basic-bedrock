@@ -1,4 +1,5 @@
 # Basic Bedrock Theme Package for Concrete CMS v9
+## Please note that due to a career change, I am no longer maintaining this repo.
 
 - [Basic Bedrock Theme Package for Concrete CMS v9](#basic-bedrock-theme-package-for-concrete-cms-v9)
   - [Concrete CMS Bedrock Documentation](#concrete-cms-bedrock-documentation)
